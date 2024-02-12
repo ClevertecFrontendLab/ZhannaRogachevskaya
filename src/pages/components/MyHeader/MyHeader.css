@@ -1,0 +1,82 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    background: #f0f5ff;
+    height: 168px;
+    padding: 16px 24px;
+}
+.header__title {
+    display: flex;
+    justify-content: space-between;
+}
+.header__title h1 {
+    width: 1015px;
+    margin: 0;
+}
+.header__title h1 span {
+    font-size: 38px;
+    line-height: 49.4px;
+    font-weight: 700;
+    text-align: left;
+    display: block;
+}
+.breadcrumb {
+    margin-bottom: 14px;
+    line-height: 18.2px;
+    color: #262626;
+}
+.btn__exit {
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 834px) {
+    .header {
+        height: 194px;
+    }
+    .header__title h1 {
+        width: 100%;
+    }
+    .header__title h1 span {
+        width: 473px;
+        font-size: 24px;
+        line-height: 31.2px;
+        font-weight: 500;
+    }
+    span.anticon.anticon-setting.setting_out_lined svg {
+        display: none;
+    }
+}
+@media (max-width: 360px) {
+    header.header {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        background: #f0f5ff;
+        height: 166px;
+        padding: 16px 24px 16px 24px;
+    }
+
+    .header__title h1 {
+        width: 100%;
+    }
+    .header__title h1 span {
+        width: 100%;
+        font-size: 20px;
+        line-height: 26px;
+        font-weight: 500;
+    }
+    span.anticon.anticon-setting.setting_out_lined svg {
+        display: block;
+    }
+    span.settings {
+        display: none;
+    }
+    .breadcrumb {
+        margin-bottom: 6px;
+    }
+    button.ant-btn.css-dev-only-do-not-override-1rqnfsa.ant-btn-circle.ant-btn-primary {
+        background: #ffffff;
+        color: #262626;
+    }
+}
