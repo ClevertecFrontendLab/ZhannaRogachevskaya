@@ -18,3 +18,8 @@
     font-size: 16px;
     color: #262626;
 }
+@media (max-width: 825px) {
+    .card__mini {
+        width: 100%;
+    }
+}

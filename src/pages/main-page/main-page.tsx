@@ -7,16 +7,14 @@ import { MyHeader } from '@pages/components/MyHeader/MyHeader';
 import { MySider } from '../components/MySider/MySider';
 import { MyContent } from '@pages/components/MyContent/MyContent';
 
-export const MainPage: React.FC = () => {
-    return (
-        <>
+export const MainPage: React.FC = () => (
+    <>
+        <Layout>
+            <MySider />
             <Layout>
-                <MySider />
-                <Layout>
-                    <MyHeader />
-                    <MyContent />
-                </Layout>
+                <MyHeader />
+                <MyContent />
             </Layout>
-        </>
-    );
-};
+        </Layout>
+    </>
+);

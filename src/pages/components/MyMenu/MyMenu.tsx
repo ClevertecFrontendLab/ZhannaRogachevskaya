@@ -3,48 +3,46 @@ import { CalendarOutlined, HeartFilled, TrophyFilled, IdcardOutlined } from '@an
 
 import Exit from './Vector.png';
 import './MyMenu.css';
-export const MyMenu: React.FC = () => {
-    return (
-        <Menu
-            className={'menu__content'}
-            mode='vertical'
-            items={[
-                {
-                    label: 'Календарь',
-                    key: 'Calendar',
-                    icon: <CalendarOutlined style={{ color: '#061178', marginRight: '10px' }} />,
-                },
-                {
-                    label: 'Тренировки',
-                    key: 'Train',
-                    icon: <HeartFilled style={{ color: '#061178', marginRight: '10px' }} />,
-                },
-                {
-                    label: 'Достижения',
-                    key: 'Progr',
-                    icon: <TrophyFilled style={{ color: '#061178', marginRight: '10px' }} />,
-                },
-                {
-                    label: 'Профиль',
-                    key: 'Account',
-                    icon: <IdcardOutlined style={{ color: '#061178', marginRight: '10px' }} />,
-                },
+export const MyMenu: React.FC = () => (
+    <Menu
+        className={'menu__content'}
+        mode='vertical'
+        items={[
+            {
+                label: 'Календарь',
+                key: 'Calendar',
+                icon: <CalendarOutlined style={{ color: '#061178', marginRight: '10px' }} />,
+            },
+            {
+                label: 'Тренировки',
+                key: 'Train',
+                icon: <HeartFilled style={{ color: '#061178', marginRight: '10px' }} />,
+            },
+            {
+                label: 'Достижения',
+                key: 'Progr',
+                icon: <TrophyFilled style={{ color: '#061178', marginRight: '10px' }} />,
+            },
+            {
+                label: 'Профиль',
+                key: 'Account',
+                icon: <IdcardOutlined style={{ color: '#061178', marginRight: '10px' }} />,
+            },
 
-                {
-                    label: 'Выход',
-                    key: 'Exit',
-                    icon: (
-                        <img
-                            src={Exit}
-                            alt='Exit SVG'
-                            className='exit__btn'
-                            style={{
-                                marginRight: '15px',
-                            }}
-                        />
-                    ),
-                },
-            ]}
-        ></Menu>
-    );
-};
+            {
+                label: 'Выход',
+                key: 'Exit',
+                icon: (
+                    <img
+                        src={Exit}
+                        alt='Exit SVG'
+                        className='exit__btn'
+                        style={{
+                            marginRight: '15px',
+                        }}
+                    />
+                ),
+            },
+        ]}
+    ></Menu>
+);

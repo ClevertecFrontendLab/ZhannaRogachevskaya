@@ -32,7 +32,7 @@ footer {
     justify-content: space-between;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 576px) {
     .logo {
         background: url('./logo_min.svg') no-repeat center;
 

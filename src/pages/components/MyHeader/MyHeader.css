@@ -10,7 +10,8 @@
     justify-content: space-between;
 }
 .header__title h1 {
-    width: 1015px;
+    display: flex;
+    flex-wrap: wrap;
     margin: 0;
 }
 .header__title h1 span {
@@ -29,7 +30,27 @@
     display: flex;
     align-items: center;
 }
-@media (max-width: 834px) {
+button.ant-btn.css-dev-only-do-not-override-1rqnfsa.ant-btn-circle.ant-btn-text {
+    width: 129px;
+    margin-right: 24px;
+}
+@media (max-width: 1260px) {
+    .header__title h1 span {
+        font-size: 34px;
+    }
+}
+@media (max-width: 1150px) {
+    .header__title h1 span {
+        font-size: 28px;
+    }
+}
+@media (max-width: 1010px) {
+    .header__title h1 span {
+        font-size: 24px;
+        line-height: 1.1;
+    }
+}
+@media (min-width: 802px) and (max-width: 868px) {
     .header {
         height: 194px;
     }
@@ -44,6 +65,28 @@
     }
     span.anticon.anticon-setting.setting_out_lined svg {
         display: none;
+    }
+}
+@media (min-width: 450px) and (max-width: 802px) {
+    .header__title h1 span {
+        font-size: 20px;
+        line-height: 1;
+    }
+    .header__title h1 {
+        max-width: 72%;
+    }
+}
+
+@media (min-width: 361px) and (max-width: 450px) {
+    .header__title h1 span {
+        font-size: 18px;
+        line-height: 1.05;
+        max-width: max-content;
+    }
+    button.ant-btn.css-dev-only-do-not-override-1rqnfsa.ant-btn-circle.ant-btn-primary {
+        position: absolute;
+        right: 2%;
+        top: 2%;
     }
 }
 @media (max-width: 360px) {

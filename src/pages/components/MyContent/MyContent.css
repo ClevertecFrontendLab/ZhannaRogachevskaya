@@ -23,9 +23,23 @@
         background: url('./Main page_light.jpg') center bottom;
     }
 }
+@media (min-width: 360px) and (max-width: 710px) {
+    .content {
+        height: 100%;
+    }
+    footer {
+        display: flex;
+
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .btn__reviews {
+        align-self: center;
+    }
+}
 @media (max-width: 360px) {
     .content {
-        height: 1196px;
+        height: 100%;
     }
     footer {
         display: flex;
