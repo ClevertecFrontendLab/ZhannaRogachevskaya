@@ -73,7 +73,16 @@ button.ant-btn.css-dev-only-do-not-override-1rqnfsa.ant-btn-circle.ant-btn-text 
         line-height: 1;
     }
     .header__title h1 {
-        max-width: 72%;
+        max-width: 85%;
+    }
+}
+@media (min-width: 360px) and (max-width: 575px) {
+    button.ant-btn.css-dev-only-do-not-override-1rqnfsa.ant-btn-circle.ant-btn-primary {
+        background-color: #ffffff;
+        color: #262626;
+    }
+    span.settings {
+        display: none;
     }
 }
 

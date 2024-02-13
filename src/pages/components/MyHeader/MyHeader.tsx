@@ -17,7 +17,7 @@ export const MyHeader: React.FC = () => {
 
                 <Button
                     type={screens.xl ? 'text' : screens.xs ? 'primary' : 'text'}
-                    shape={'circle'}
+                    shape={screens.xl ? 'default' : screens.xs ? 'circle' : 'default'}
                 >
                     <SettingOutlined className='setting_out_lined' />
                     <span className='settings'>Настройки</span>
