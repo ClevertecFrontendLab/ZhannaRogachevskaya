@@ -11,23 +11,114 @@ import { ConfirmEmail } from '@pages/confirm-email/confirm-email';
 import { ChangePassword } from '@pages/change-password/change-password';
 import { SuccessPassword } from '@pages/success-password/success-password';
 import { ErrorPassword } from '@pages/error-password/error-password';
-
+import { ErrorCheck } from '@pages/error-check/error-check';
+import { RequiredAuth } from '../hoc/RequiredAuth';
+import { AuthProvider } from '../hoc/AuthProvider';
+import { CheckUrl } from '../hoc/CheckUrl';
+import { CheckUrlReg } from '../hoc/CheckUrlReg';
+import { CheckUrlConfirm } from '../hoc/CheckUrlConfirm';
+// import { CheckUrlConfirm2 } from '../hoc/CheckUrlConfirm2';
+import { CheckUrlPassword } from '../hoc/CheckUrlPassword';
 export const routes = (
-    <Routes>
-        <Route path='/main' element={<MainPage />} />
-        <Route path='/auth' element={<LoginPage />}></Route>
-        <Route path='/registr' element={<RegistrPage />}></Route>
-        <Route path='/result/error-login' element={<ErrorLogin />}></Route>
-        <Route path='/result/error-user-exist' element={<ErrorUser />}></Route>
-        <Route path='/result/error' element={<ResultError />}></Route>
-        <Route path='/result/success' element={<ResultSuccess />}></Route>
-        <Route path='/result/error-check-email' element={<CheckEmail />}></Route>
-        <Route path='/auth/confirm-email' element={<ConfirmEmail />}></Route>
-        <Route path='/auth/change-password' element={<ChangePassword />}></Route>
+    <AuthProvider>
+        <Routes>
+            <Route path='/' element={<Navigate to={'/auth'} />} />
+            <Route path='/auth' element={<LoginPage />} />
+            <Route path='/auth/registration' element={<RegistrPage />} />
+            <Route
+                path='/main'
+                element={
+                    <RequiredAuth>
+                        <MainPage />
+                    </RequiredAuth>
+                }
+            />
+            <Route
+                path='/result/error-login'
+                element={
+                    <CheckUrl>
+                        <ErrorLogin />
+                    </CheckUrl>
+                }
+            />
+            <Route
+                path='/result/success'
+                element={
+                    <CheckUrlReg>
+                        <ResultSuccess />
+                    </CheckUrlReg>
+                }
+            />
+            <Route
+                path='/result/error-user-exist'
+                element={
+                    <CheckUrlReg>
+                        <ErrorUser />
+                    </CheckUrlReg>
+                }
+            ></Route>
+            <Route
+                path='/result/error'
+                element={
+                    <CheckUrlReg>
+                        <ResultError />
+                        //{' '}
+                    </CheckUrlReg>
+                }
+            />
+            <Route
+                path='/auth/confirm-email'
+                element={
+                    <CheckUrl>
+                        <ConfirmEmail />
+                    </CheckUrl>
+                }
+            />
+            <Route
+                path='/result/error-check-email'
+                element={
+                    <CheckUrl>
+                        <CheckEmail />
+                    </CheckUrl>
+                }
+            />
 
-        <Route path='/result/success-change-password' element={<SuccessPassword />}></Route>
-        <Route path='/result/error-change-password' element={<ErrorPassword />}></Route>
+            <Route
+                path='/result/error-check-email-no-exist'
+                element={
+                    <CheckUrl>
+                        <ErrorCheck />
+                    </CheckUrl>
+                }
+            />
 
-        <Route path='*' element={<Navigate to={'/auth'} />} />
-    </Routes>
+            <Route
+                path='/auth/change-password'
+                element={
+                    <CheckUrlConfirm>
+                        <ChangePassword />
+                    </CheckUrlConfirm>
+                }
+            />
+
+            <Route
+                path='/result/success-change-password'
+                element={
+                    <CheckUrlPassword>
+                        <SuccessPassword />
+                    </CheckUrlPassword>
+                }
+            />
+            <Route
+                path='/result/error-change-password'
+                element={
+                    <CheckUrlPassword>
+                        <ErrorPassword />
+                    </CheckUrlPassword>
+                }
+            />
+
+            <Route path='*' element={<Navigate to={'/auth'} />} />
+        </Routes>
+    </AuthProvider>
 );

@@ -38,15 +38,9 @@
     height: 40px;
     margin-bottom: 24px;
 }
-input.ant-input.css-dev-only-do-not-override-1rqnfsa.ant-input-outlined.small {
-    width: 40px;
-    height: 40px;
-    text-align: center;
-}
-input.ant-input.css-dev-only-do-not-override-1rqnfsa.ant-input-outlined.small:focus {
-    background-color: #ffffff;
-}
-
+/* .error-character {
+    border: 1px solid red;
+} */
 @media (max-width: 620px) {
     .window__confirm {
         width: 328px;
@@ -58,4 +52,18 @@ input.ant-input.css-dev-only-do-not-override-1rqnfsa.ant-input-outlined.small:fo
     .confirm__text {
         width: 296px;
     }
+}
+.vi__character.vi__character--inactive {
+    background-color: #ffffff;
+}
+.vi__character {
+    border: 1px solid #d9d9d9;
+    width: 40px;
+    height: 40px;
+}
+.error {
+    border: 1px solid red;
+}
+.select_error {
+    border: 1px solid #ffffff;
 }
