@@ -1,25 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { HashRouter, Route, Routes } from 'react-router-dom';
-
-import { store } from '@redux/configure-store';
-import { MainPage } from './pages';
-
 import 'normalize.css';
 import './index.css';
+import { useState } from 'react';
+import { HistoryRouter } from 'redux-first-history/rr6';
+import { store, history } from './routes/store';
+import { routes } from './routes/routes';
 
 const domNode = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(domNode);
 
 root.render(
     <React.StrictMode>
-        <Provider store={store}>
-            <HashRouter>
-                <Routes>
-                    <Route path='/' element={<MainPage />} />
-                </Routes>
-            </HashRouter>
-        </Provider>
+        {/* <Provider store={store}> */}
+
+        <HistoryRouter history={history}>{routes}</HistoryRouter>
+
+        {/* </Provider> */}
     </React.StrictMode>,
 );
